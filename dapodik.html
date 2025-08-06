@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelatihan Peningkatan Kompetensi Operator Dapodik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_ID.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #001F3F 0%, #0074D9 100%);
+
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden overflow-y-auto">
+    <!-- Navigation -->
+    <!-- Pastikan di <head> sudah disertakan Font Awesome -->
+<!-- <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> -->
+
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center overflow-auto">
+                
+                <!-- Kiri: Logo dan Judul -->
+                <div class="flex items-center space-x-3 flex-shrink-0 max-w-full">
+                    <!-- Logo -->
+                    <div class="bg-white p-1 rounded-lg flex-shrink-0">
+                        <img src="dapodik.png" alt="Logo Dapodik" class="w-10 h-10 object-contain">
+                    </div>
+
+                    <!-- Judul dan Subjudul -->
+                    <div class="leading-tight text-left overflow-hidden">
+                        <h1 class="text-xs sm:text-sm font-bold text-gray-800 truncate">
+                            Dinas Pendidikan dan Kebudayaan Provinsi Kalimantan Selatan
+                        </h1>
+                        <p class="text-[10px] sm:text-xs text-gray-600 truncate">
+                            Sub Bagian Perencanaan dan Pelaporan
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kanan: Menu Navigasi -->
+                <div class="hidden md:flex space-x-8" id="navbar">
+                    <a href="#beranda" class="nav-link text-blue-600 font-medium text-sm">Beranda</a>
+                    <a href="#angkatan" class="nav-link text-gray-700 hover:text-blue-600 text-sm">Angkatan</a>
+                    <a href="#materi" class="nav-link text-gray-700 hover:text-blue-600 text-sm">Materi</a>
+                    <a href="#dokumentasi" class="nav-link text-gray-700 hover:text-blue-600 text-sm">Dokumentasi</a>
+                    <a href="#kontak" class="nav-link text-gray-700 hover:text-blue-600 text-sm">Kontak</a>
+                </div>
+
+                <!-- Mobile Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu (hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+            <a href="#beranda" class="block text-blue-600 font-medium text-sm py-2">Beranda</a>
+            <a href="#angkatan" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Angkatan</a>
+            <a href="#materi" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Materi</a>
+            <a href="#dokumentasi" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Dokumentasi</a>
+            <a href="#kontak" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Kontak</a>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section id="beranda" class="relative pt-20 pb-16 text-white overflow-hidden">
+    <!-- Background gambar dengan skala yang lebih kecil dan responsif -->
+    <div class="absolute inset-0 bg-[url('bg.png')] bg-center bg-no-repeat bg-contain sm:bg-cover z-0"></div>
+
+    <!-- Overlay gradasi -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-800 via-blue-600 to-blue-400 opacity-90 z-0"></div>
+
+    <!-- Konten -->
+    <div class="relative z-10 container mx-auto px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Pelatihan Peningkatan Kompetensi
+                <span class="text-yellow-300">Operator Dapodik</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100">
+                Tingkatkan kemampuan dalam mengelola Data Pokok Pendidikan dengan pelatihan komprehensif dari ahli berpengalaman
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openConfirmationModal()" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition duration-300">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Konfirmasi Kehadiran
+                </button>
+                <a href="#materi" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition duration-300">
+                    <i class="fas fa-book mr-2"></i>
+                    Lihat Materi
+                </a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Angkatan Section -->
+    <section id="angkatan" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Jadwal Pelatihan</h2>
+                <p class="text-xl text-gray-600">Pilih angkatan yang sesuai dengan jadwal Anda</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Angkatan 1 -->
+                <div class="angkatan-card bg-white rounded-xl shadow-lg p-8 border-l-4" 
+                    data-start="2025-08-7" 
+                    data-end="2025-08-13" 
+                    data-title="Angkatan 1" 
+                    data-location="Banjarmasin, Hotel Aria Barito" 
+                    data-participants="50">
+                    <div class="angkatan-content"></div>
+                </div>
+                <!-- Angkatan 2 -->
+                <div class="angkatan-card bg-white rounded-xl shadow-lg p-8 border-l-4" 
+                    data-start="2025-08-13" 
+                    data-end="2025-08-15" 
+                    data-title="Angkatan 2" 
+                    data-location="Banjarmasin, Hotel Aria Barito" 
+                    data-participants="60">
+                <div class="angkatan-content"></div>
+                </div>
+                <!-- Angkatan 3 -->
+                <div class="angkatan-card bg-white rounded-xl shadow-lg p-8 border-l-4" 
+                    data-start="2025-08-19" 
+                    data-end="2025-08-21" 
+                    data-title="Angkatan 3" 
+                    data-location="Banjarmasin, Hotel Aria Barito" 
+                    data-participants="70">
+                <div class="angkatan-content"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materi Section -->
+    <section id="materi" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Materi Pelatihan</h2>
+                <p class="text-xl text-gray-600">Peningkatan Kompetensi Operator Dapodik</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Materi 1 -->
+                <div class="bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl p-6">
+                    <div class="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-database text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Optimalisasi Kualitas Dapodik</h3>
+                    <p class="text-gray-600 mb-4">Optimalisasi Kualitas Dapodik untuk mendukung perencanaan dan layanan pendidikan yang lebih tepat sasaran.</p>
+                    <a href="https://drive.google.com/your-link-1" target="_blank" class="text-blue-700 font-medium hover:text-blue-900">
+                        Lihat Materi <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Materi 2 -->
+                <div class="bg-gradient-to-br from-green-100 to-green-200 rounded-xl p-6">
+                    <div class="bg-green-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pemanfaatan Dapodik</h3>
+                    <p class="text-gray-600 mb-4">Pemanfaatan Dapodik untuk peningkatan mutu pembelajaran dan kebijakan pendidikan berbasis data.</p>
+                    <a href="https://drive.google.com/your-link-2" target="_blank" class="text-green-700 font-medium hover:text-green-900">
+                        Lihat Materi <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Materi 3 -->
+                <div class="bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl p-6">
+                    <div class="bg-purple-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-sync-alt text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Strategi Sinkronisasi</h3>
+                    <p class="text-gray-600 mb-4">Strategi verifikasi dan validasi singkronisasi data satuan pendidikan</p>
+                    <a href="https://drive.google.com/your-link-3" target="_blank" class="text-purple-700 font-medium hover:text-purple-900">
+                        Lihat Materi <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Materi 4 -->
+                <div class="bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-xl p-6">
+                    <div class="bg-yellow-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-keyboard text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Optimalisasi Entri</h3>
+                    <p class="text-gray-600 mb-4">Optimalisasi entri rombel, pembelajaran, jadwal untuk beban kerja guru yang valid.</p>
+                    <a href="https://drive.google.com/your-link-4" target="_blank" class="text-yellow-700 font-medium hover:text-yellow-900">
+                        Lihat Materi <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Materi 5 -->
+                <div class="bg-gradient-to-br from-red-100 to-red-200 rounded-xl p-6">
+                    <div class="bg-red-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Adaptasi Fitur Baru</h3>
+                    <p class="text-gray-600 mb-4">Mengenal fitur baru Dapodik dan implementasi di satuan pendidikan.</p>
+                    <a href="https://drive.google.com/your-link-5" target="_blank" class="text-red-700 font-medium hover:text-red-900">
+                        Lihat Materi <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Materi 6 -->
+                <div class="bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-xl p-6">
+                    <div class="bg-indigo-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-tools text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Troubleshooting</h3>
+                    <p class="text-gray-600 mb-4">Penanganan error & perbaikan input data yang sering terjadi.</p>
+                    <a href="https://drive.google.com/your-link-6" target="_blank" class="text-indigo-700 font-medium hover:text-indigo-900">
+                        Lihat Materi <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Materi 7 -->
+                <div class="bg-gradient-to-br from-pink-100 to-pink-200 rounded-xl p-6">
+                    <div class="bg-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-id-card text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Pemadanan Data Kependudukan</h3>
+                    <p class="text-gray-600 mb-4">Pemadanan NIK peserta didik dan solusi identitas ganda.</p>
+                    <a href="https://drive.google.com/your-link-7" target="_blank" class="text-pink-700 font-medium hover:text-pink-900">
+                        Lihat Materi <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <!-- Materi 8 -->
+                <div class="bg-gradient-to-br from-teal-100 to-teal-200 rounded-xl p-6">
+                    <div class="bg-teal-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users-cog text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Verval Peserta Didik & PTK</h3>
+                    <p class="text-gray-600 mb-4">Manajemen dan validasi peserta didik dan PTK secara efisien.</p>
+                    <a href="https://drive.google.com/your-link-8" target="_blank" class="text-teal-700 font-medium hover:text-teal-900">
+                        Lihat Materi <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Dokumentasi Section -->
+    <section id="dokumentasi" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Dokumentasi Kegiatan</h2>
+            <p class="text-xl text-gray-600">Galeri foto dan video kegiatan pelatihan</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto justify-items-center">
+            <!-- Galeri Foto -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover w-full max-w-sm">
+                <div class="bg-gradient-to-r from-blue-400 to-blue-600 h-48 flex items-center justify-center">
+                <i class="fas fa-image text-white text-5xl"></i>
+                </div>
+                <div class="p-6 text-center">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Galeri Foto</h3>
+                <p class="text-gray-600 mb-4">Galeri Foto Kegiatan</p>
+                <a href="https://drive.google.com/your-link-7" target="_blank" class="text-blue-600 font-medium hover:text-blue-800 inline-block">
+                    Lihat Galeri Foto <i class="fas fa-external-link-alt ml-1"></i>
+                </a>
+                </div>
+            </div>
+
+            <!-- Galeri Video -->
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover w-full max-w-sm">
+                <div class="bg-gradient-to-r from-green-400 to-green-600 h-48 flex items-center justify-center">
+                <i class="fas fa-video text-white text-5xl"></i>
+                </div>
+                <div class="p-6 text-center">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Galeri Video</h3>
+                <p class="text-gray-600 mb-4">Video dokumentasi Pelatihan</p>
+                <a href="https://drive.google.com/your-link-8" target="_blank" class="text-blue-600 font-medium hover:text-blue-800 inline-block">
+                    Lihat Galeri Video <i class="fas fa-external-link-alt ml-1"></i>
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-4">
+                <div class="bg-transparent rounded-full shadow">
+                    <img src="dapodik.png" alt="Logo Dapodik" class="w-20 h-20 object-contain">
+                </div>
+                <span class="text-xl font-bold">Pelatihan Peningkatan Kompetensi Operator Dapodik Provinsi Kalimantan Selatan</span>
+            </div>
+            <p class="text-gray-400">Dinas Pendidikan dan Kebudayaan Provinsi Kalimantan Selatan</p>
+            <p class="text-gray-400 mb-4">Sub Bagian Perencanaan dan Pelaporan</p>
+            <p class="text-gray-500">&copy; 2025 Disdikbud Prov. Kal-Sel. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+    
+<!-- Modal Konfirmasi Kehadiran -->
+    <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+    <div class="bg-white w-full max-w-4xl h-[90vh] rounded-lg shadow-lg relative overflow-hidden">
+        <!-- Tombol close -->
+        <button onclick="closeFormModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+        
+        <h3 class="text-2xl font-bold mb-4 text-gray-800">Formulir Konfirmasi Kehadiran</h3>
+        
+        <!-- Iframe Google Form -->
+        <iframe 
+        id="googleFormIframe"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSei9jfNIp6DP1aY8XNFDF9wwIPeOGNW9xggp_49ghe5mqHl1A/viewform?usp=sharing&ouid=100707923130441719591" 
+        width="100%" 
+        height="700" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0" 
+        class="rounded-lg border">
+        Memuat…
+        </iframe>
+    </div>
+    </div>
+
+<script>
+    // Toggle mobile menu visibility
+    const btn = document.getElementById('mobile-menu-button');
+    const menu = document.getElementById('mobile-menu');
+
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+    // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    // 
+    // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    
+    // Menandai link aktif berdasarkan hash saat ini (#beranda, #materi, dst)
+        document.addEventListener("DOMContentLoaded", function () {
+            const links = document.querySelectorAll("nav a[href^='#']");
+
+            function setActiveLink(link) {
+            links.forEach((a) => {
+                a.classList.remove("text-blue-600", "font-medium");
+                a.classList.add("text-gray-700");
+            });
+            link.classList.add("text-blue-600", "font-medium");
+            link.classList.remove("text-gray-700");
+            }
+
+            links.forEach((link) => {
+            link.addEventListener("click", function () {
+                setActiveLink(this);
+            });
+            });
+        });
+    // Script untuk mengelola tampilan angkatan
+        document.addEventListener("DOMContentLoaded", function () {
+        const bulanIndo = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        ];
+
+        function formatTanggal(tanggalStr) {
+        const t = new Date(tanggalStr);
+        return `${t.getDate()} ${bulanIndo[t.getMonth()]} ${t.getFullYear()}`;
+        }
+
+        function getStatus(start, end) {
+        const now = new Date();
+        const startDate = new Date(start);
+        const endDate = new Date(end);
+
+        if (now < startDate) return { label: "Akan Datang", color: "blue" };
+        else if (now > endDate) return { label: "Selesai", color: "green" };
+        else return { label: "Sedang Berjalan", color: "yellow" };
+        }
+
+        document.querySelectorAll(".angkatan-card").forEach(function (card) {
+        const start = card.dataset.start;
+        const end = card.dataset.end;
+        const title = card.dataset.title;
+        const location = card.dataset.location;
+        const participants = card.dataset.participants;
+
+        const status = getStatus(start, end);
+
+        card.classList.add(`border-${status.color}-500`);
+
+        card.querySelector(".angkatan-content").innerHTML = `
+            <div class="flex items-center justify-between mb-6">
+            <h3 class="text-2xl font-bold text-gray-800">${title}</h3>
+            <span class="bg-${status.color}-100 text-${status.color}-800 px-3 py-1 rounded-full text-sm font-medium">
+                ${status.label}
+            </span>
+            </div>
+            <div class="space-y-4 mb-6 text-gray-600">
+            <div class="flex items-center"><i class="fas fa-calendar mr-3 text-${status.color}-500"></i>
+                <span>${formatTanggal(start)} sampai ${formatTanggal(end)}</span>
+            </div>
+            <div class="flex items-center"><i class="fas fa-users mr-3 text-${status.color}-500"></i>
+                <span>${participants} Peserta</span>
+            </div>
+            <div class="flex items-center"><i class="fas fa-map-marker-alt mr-3 text-${status.color}-500"></i>
+                <span>${location}</span>
+            </div>
+            </div>
+            ${
+            status.label === "Sedang Berjalan"
+                ? `<button class="w-full bg-yellow-500 text-white py-3 rounded-lg font-medium hover:bg-yellow-600 transition duration-300">Konfirmasi Kehadiran</button>`
+                : `<button class="w-full bg-gray-300 text-gray-500 py-3 rounded-lg font-medium cursor-not-allowed">Pelatihan ${status.label}</button>`
+            }
+        `;
+        });
+    });
+</script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96afecfb120f3e02',t:'MTc1NDQ5NzkwMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>   
+<!-- Modal Google Form -->
+
+<script>
+  function openConfirmationModal() {
+    // Atur URL Google Form
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSei9jfNIp6DP1aY8XNFDF9wwIPeOGNW9xggp_49ghe5mqHl1A/viewform?usp=sharing&ouid=100707923130441719591";
+    
+    document.getElementById("googleFormIframe").src = formUrl;
+    document.getElementById("formModal").classList.remove("hidden");
+  }
+
+  function closeFormModal() {
+    document.getElementById("formModal").classList.add("hidden");
+    document.getElementById("googleFormIframe").src = ""; // kosongkan iframe untuk reset
+  }
+
+  // Optional: klik luar modal juga nutup
+  window.addEventListener("click", function (e) {
+    const modal = document.getElementById("formModal");
+    if (e.target === modal) {
+      closeFormModal();
+    }
+  });
+</script>
+</div>
+</body>
+</html>
