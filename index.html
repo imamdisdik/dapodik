@@ -318,27 +318,19 @@
     </footer>
     
 <!-- Modal Konfirmasi Kehadiran -->
-    <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
-    <div class="bg-white w-full max-w-4xl h-[90vh] rounded-lg shadow-lg relative overflow-hidden">
-        <!-- Tombol close -->
-        <button onclick="closeFormModal()" class="absolute top-2 right-2 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
-        
-        <h3 class="text-2xl font-bold mb-4 text-gray-800">Formulir Konfirmasi Kehadiran</h3>
-        
-        <!-- Iframe Google Form -->
-        <iframe 
-        id="googleFormIframe"
-        src="https://docs.google.com/forms/d/e/1FAIpQLSei9jfNIp6DP1aY8XNFDF9wwIPeOGNW9xggp_49ghe5mqHl1A/viewform?usp=sharing&ouid=100707923130441719591" 
-        width="100%" 
-        height="700" 
-        frameborder="0" 
-        marginheight="0" 
-        marginwidth="0" 
-        class="rounded-lg border">
-        Memuat…
-        </iframe>
+    <!-- Modal Container -->
+    <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-lg p-4 w-full max-w-3xl relative">
+    <!-- Tombol Close -->
+    <button onclick="closeFormModal()" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold">&times;</button>
+    <div class="p-4 border-b">
+      <h3 class="text-2xl font-bold text-gray-800">Formulir Konfirmasi Kehadiran</h3>
     </div>
-    </div>
+    <!-- Iframe Google Form -->
+    <iframe id="googleFormIframe" src="" class="w-full h-[500px] rounded border-2 border-gray-300"></iframe>
+  </div>
+</div>
+
 
 <script>
     // Toggle mobile menu visibility
@@ -453,19 +445,17 @@
 
 <script>
   function openConfirmationModal() {
-    // Atur URL Google Form
-    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSei9jfNIp6DP1aY8XNFDF9wwIPeOGNW9xggp_49ghe5mqHl1A/viewform?usp=sharing&ouid=100707923130441719591";
-    
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScuhCEHDOU2BT5Z00TOHor1v0UV8PohUxecjEq_5-1cP4HExA//viewform?embedded=true";
     document.getElementById("googleFormIframe").src = formUrl;
     document.getElementById("formModal").classList.remove("hidden");
   }
 
   function closeFormModal() {
     document.getElementById("formModal").classList.add("hidden");
-    document.getElementById("googleFormIframe").src = ""; // kosongkan iframe untuk reset
+    document.getElementById("googleFormIframe").src = "";
   }
 
-  // Optional: klik luar modal juga nutup
+  // Klik luar modal untuk menutup
   window.addEventListener("click", function (e) {
     const modal = document.getElementById("formModal");
     if (e.target === modal) {
