@@ -24,59 +24,55 @@
 </head>
 <body class="bg-gray-50 overflow-x-hidden overflow-y-auto">
     <!-- Navigation -->
-    <!-- Pastikan di <head> sudah disertakan Font Awesome -->
-<!-- <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> -->
-
+    <!-- Navbar -->
     <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-center overflow-auto">
-                
-                <!-- Kiri: Logo dan Judul -->
-                <div class="flex items-center flex-shrink-0 max-w-full">
-                    <!-- Logo -->
-                    <div class="bg-white p-1 rounded-lg flex-shrink-0">
-                        <img src="logo.png" alt="Logo Dapodik" class="w-10 h-10 object-contain">
-                    </div>
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="flex justify-between items-center py-2">
 
-                    <!-- Judul dan Subjudul -->
-                    <div class="leading-tight text-left overflow-hidden">
-                        <h1 class="text-xs sm:text-sm font-bold text-gray-800 truncate">
-                            Dinas Pendidikan dan Kebudayaan Provinsi Kalimantan Selatan
-                        </h1>
-                        <p class="text-[10px] sm:text-xs text-gray-600 truncate">
-                            Sub Bagian Perencanaan dan Pelaporan
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Kanan: Menu Navigasi -->
-                <div class="hidden md:flex space-x-8" id="navbar">
-                    <a href="#beranda" class="nav-link text-blue-600 font-medium text-sm">Beranda</a>
-                    <a href="#angkatan" class="nav-link text-gray-700 hover:text-blue-600 text-sm">Angkatan</a>
-                    <a href="#materi" class="nav-link text-gray-700 hover:text-blue-600 text-sm">Materi</a>
-                    <a href="#dokumentasi" class="nav-link text-gray-700 hover:text-blue-600 text-sm">Dokumentasi</a>
-                    <a href="#kontak" class="nav-link text-gray-700 hover:text-blue-600 text-sm">Kontak</a>
-                </div>
-
-                <!-- Mobile Button -->
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+        <!-- Kiri: Logo dan Judul -->
+        <div class="flex items-center space-x-2 flex-shrink-0">
+            <!-- Logo -->
+            <div class="bg-white p-1 rounded-lg">
+            <img src="logo.png" alt="Logo Dapodik" class="w-10 h-10 object-contain">
+            </div>
+            <!-- Judul dan Subjudul -->
+            <div class="leading-tight text-left">
+            <h1 class="text-xs sm:text-sm font-bold text-gray-800">
+                Dinas Pendidikan dan Kebudayaan Provinsi Kalimantan Selatan
+            </h1>
+            <p class="text-[10px] sm:text-xs text-gray-600">
+                Sub Bagian Perencanaan dan Pelaporan
+            </p>
             </div>
         </div>
-        <!-- Mobile Menu (hidden by default) -->
-        <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
-            <a href="#beranda" class="block text-blue-600 font-medium text-sm py-2">Beranda</a>
-            <a href="#angkatan" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Angkatan</a>
-            <a href="#materi" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Materi</a>
-            <a href="#dokumentasi" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Dokumentasi</a>
-            <a href="#kontak" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Kontak</a>
+
+        <!-- Kanan: Menu Navigasi Desktop -->
+        <div class="hidden md:flex space-x-8 items-center" id="navbar">
+            <a href="#beranda" class="text-blue-600 font-medium text-sm">Beranda</a>
+            <a href="#angkatan" class="text-gray-700 hover:text-blue-600 text-sm">Angkatan</a>
+            <a href="#materi" class="text-gray-700 hover:text-blue-600 text-sm">Materi</a>
+            <a href="#dokumentasi" class="text-gray-700 hover:text-blue-600 text-sm">Dokumentasi</a>
+            <a href="#kontak" class="text-gray-700 hover:text-blue-600 text-sm">Kontak</a>
         </div>
+
+        <!-- Tombol Mobile -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+            <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+        <a href="#beranda" class="block text-blue-600 font-medium text-sm py-2">Beranda</a>
+        <a href="#angkatan" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Angkatan</a>
+        <a href="#materi" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Materi</a>
+        <a href="#dokumentasi" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Dokumentasi</a>
+        <a href="#kontak" class="block text-gray-700 hover:text-blue-600 text-sm py-2">Kontak</a>
+    </div>
     </nav>
-
-
 
     <!-- Hero Section -->
     <section id="beranda" class="relative pt-20 pb-16 text-white overflow-hidden">
@@ -347,11 +343,11 @@
 
 <script>
     // Toggle mobile menu visibility
-    const btn = document.getElementById('mobile-menu-button');
-    const menu = document.getElementById('mobile-menu');
+    const mobileMenuBtn = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    btn.addEventListener('click', () => {
-        menu.classList.toggle('hidden');
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
     });
     // Close mobile menu when clicking a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
