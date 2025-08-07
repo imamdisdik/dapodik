@@ -102,9 +102,11 @@
                     <i class="fas fa-check-circle mr-2"></i>
                     Konfirmasi Kehadiran
                 </button>
-                <a href="#materi" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition duration-300">
+                <a href="https://drive.google.com/drive/folders/1zfBfiu8mjt2yFkMh7YHEX6zgNo8WET-O?usp=sharing" 
+                    target="_blank" 
+                    class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-blue-900 transition duration-300">
                     <i class="fas fa-book mr-2"></i>
-                    Lihat Materi
+                    Lihat Materi Pelatihan
                 </a>
             </div>
         </div>
@@ -317,20 +319,21 @@
         </div>
     </footer>
     
-<!-- Modal Konfirmasi Kehadiran -->
-    <!-- Modal Container -->
-    <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-lg p-4 w-full max-w-3xl relative">
-    <!-- Tombol Close -->
-    <button onclick="closeFormModal()" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold">&times;</button>
-    <div class="p-4 border-b">
-      <h3 class="text-2xl font-bold text-gray-800">Formulir Konfirmasi Kehadiran</h3>
-    </div>
-    <!-- Iframe Google Form -->
-    <iframe id="googleFormIframe" src="" class="w-full h-[500px] rounded border-2 border-gray-300"></iframe>
-  </div>
-</div>
 
+    <!-- Modal Container -->
+
+    <!-- Modal Konfirmasi Kehadiran -->
+    <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg p-4 w-full max-w-3xl relative">
+            <!-- Tombol Close -->
+            <button onclick="closeFormModal()" class="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold">&times;</button>
+            <div class="p-4 border-b">
+            <h3 class="text-2xl font-bold text-gray-800">Formulir Konfirmasi Kehadiran</h3>
+            </div>
+            <!-- Iframe Google Form -->
+            <iframe id="googleFormIframe" src="" class="w-full h-[500px] rounded border-2 border-gray-300"></iframe>
+        </div>
+    </div>
 
 <script>
     // Toggle mobile menu visibility
@@ -445,15 +448,15 @@
 
 <script>
   function openConfirmationModal() {
-    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScuhCEHDOU2BT5Z00TOHor1v0UV8PohUxecjEq_5-1cP4HExA//viewform?embedded=true";
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLScuhCEHDOU2BT5Z00TOHor1v0UV8PohUxecjEq_5-1cP4HExA/viewform?embedded=true";
     document.getElementById("googleFormIframe").src = formUrl;
     document.getElementById("formModal").classList.remove("hidden");
-  }
+    }
 
-  function closeFormModal() {
-    document.getElementById("formModal").classList.add("hidden");
-    document.getElementById("googleFormIframe").src = "";
-  }
+    function closeMateriModal() {
+        document.getElementById("materiModal").classList.add("hidden");
+        document.getElementById("materiIframe").src = "";
+    }
 
   // Klik luar modal untuk menutup
   window.addEventListener("click", function (e) {
